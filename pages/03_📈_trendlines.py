@@ -23,7 +23,7 @@ st.sidebar.write(st.session_state.korpus_id)
 corpus = st.session_state['korpus']
 
 
-words =  st.text_input("trendlinjer for ord", st.session_state.get('trend_words', ''), key='trend_words', help="Skriv en liste med ord adskilt med mellomrom som Norwegish Lappen")
+words =  st.text_input("trendlinjer for enkeltord", st.session_state.get('trend_words', ''), key='trend_words', help="Skriv en liste med ord adskilt med mellomrom som for eksempel 'utvandring Utvandring Demokrati demokratisk' - uten anførselstegn")
 
 try:
     st.session_state["trendlines"] = tc.corpus_ngram(corpus, words, mode="abs")
