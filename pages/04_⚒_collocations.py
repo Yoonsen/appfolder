@@ -74,7 +74,7 @@ if "totals" not in st.session_state:
 col1, col2, colbefore, colafter = st.columns(4)
 with col1:
     koll_ord = st.text_input("kollokasjon for", st.session_state.get('coll_word', ""), key='coll_word')
-    
+    koll_ord = koll_ord.strip()
 with col2:
     antall = st.number_input("maks antall treff",
                              min_value = 1, 
